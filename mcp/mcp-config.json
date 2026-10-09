@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json.schemastore.org/mcp-config.json",
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"],
+      "description": "Chrome DevTools MCP: live browser inspection, performance tracing, console logs, network requests, and Puppeteer automation."
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "description": "Context7 MCP: real-time version-specific documentation and API references from Upstash Context7."
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server:latest"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN"
+      },
+      "description": "GitHub MCP Server (official): repository, pull request, issue, and code search management."
+    },
+    "github-node-fallback": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN"
+      },
+      "description": "GitHub MCP Server (Node/NPX fallback when Docker is not installed)."
+    },
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp",
+      "description": "Supabase MCP Server (Official Remote HTTP): table schema inspection, SQL queries, migrations, and project management."
+    },
+    "engram": {
+      "command": "engram",
+      "args": [],
+      "env": {
+        "ENGRAM_DB": "~/.local/share/engram/memories.db",
+        "ENGRAM_MCP_TOOL_PROFILE": "full"
+      },
+      "description": "Engram MCP: persistent cross-session memory with SQLite + ONNX hybrid retrieval and branch-aware handoffs."
+    },
+    "testsprite": {
+      "command": "npx",
+      "args": ["-y", "@testsprite/testsprite-mcp@latest"],
+      "env": {
+        "API_KEY": "YOUR_TESTSPRITE_API_KEY"
+      },
+      "description": "TestSprite MCP: autonomous AI testing agent for test case generation and execution."
+    }
+  }
+}
