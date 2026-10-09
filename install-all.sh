@@ -2,7 +2,7 @@
 set -e
 
 echo "=========================================="
-echo "    PRH: Skills & MCP Fast Setup          "
+echo "    CC-SKILLS-MCP: Fast Setup             "
 echo "=========================================="
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

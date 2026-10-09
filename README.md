@@ -1,4 +1,4 @@
-# PRH: AI Engineering Skills & MCP Toolkit
+# CC-SKILLS-MCP: AI Engineering Skills & MCP Toolkit
 
 Centralized repository containing production-grade **Skills** and **Model Context Protocol (MCP)** servers curated for rapid team onboarding and agentic development (supporting **OpenCode**, **Cursor**, **Claude Code**, **Antigravity**, **VS Code**, and **Windsurf**).
 
@@ -10,8 +10,8 @@ Centralized repository containing production-grade **Skills** and **Model Contex
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/luisfelix122/PRH.git
-cd PRH
+git clone https://github.com/luisfelix122/CC-SKILLS-MCP.git
+cd CC-SKILLS-MCP
 ```
 
 ### 2. One-Click Installation
@@ -74,7 +74,7 @@ All MCP configurations, schemas, and individual guides are located in the [`mcp/
 ## Repository Structure
 
 ```text
-PRH/
+CC-SKILLS-MCP/
 ├── README.md                      # English documentation & quickstart
 ├── README.es.md                   # Documentación en Español para el equipo
 ├── install-all.sh                 # 1-click Linux/macOS installer
@@ -113,3 +113,4 @@ PRH/
 ## License
 
 This collection references open-source tools and documentation under their respective MIT, Apache 2.0, and BSD licenses.
+

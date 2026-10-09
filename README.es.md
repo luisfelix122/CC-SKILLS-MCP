@@ -1,4 +1,4 @@
-# PRH: Repositorio de Skills y MCP para el Equipo
+# CC-SKILLS-MCP: Repositorio de Skills y MCP para el Equipo
 
 Repositorio centralizado con las mejores **Skills** y servidores **Model Context Protocol (MCP)** configurados para que el equipo los descargue, instale y use inmediatamente en **OpenCode**, **Cursor**, **Claude Code**, **Antigravity**, **VS Code** y **Windsurf**.
 
@@ -8,8 +8,8 @@ Repositorio centralizado con las mejores **Skills** y servidores **Model Context
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/luisfelix122/PRH.git
-cd PRH
+git clone https://github.com/luisfelix122/CC-SKILLS-MCP.git
+cd CC-SKILLS-MCP
 ```
 
 ### 2. Instalación en 1 Clic
@@ -79,4 +79,4 @@ En la carpeta [`mcp/`](./mcp/) se encuentran las configuraciones y guías de ins
 
 ## Contacto y Mantenimiento
 
-Repositorio oficial del equipo: [https://github.com/luisfelix122/PRH](https://github.com/luisfelix122/PRH).
+Repositorio oficial del equipo: [https://github.com/luisfelix122/CC-SKILLS-MCP](https://github.com/luisfelix122/CC-SKILLS-MCP).

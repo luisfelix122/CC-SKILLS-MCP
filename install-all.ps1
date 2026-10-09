@@ -2,7 +2,7 @@
 $ErrorActionPreference = "Stop"
 
 Write-Host "==========================================" -ForegroundColor Cyan
-Write-Host "    PRH: Skills & MCP Fast Setup          " -ForegroundColor Cyan
+Write-Host "    CC-SKILLS-MCP: Fast Setup             " -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
