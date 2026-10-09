@@ -66,6 +66,8 @@ En la carpeta [`mcp/`](./mcp/) se encuentran las configuraciones y guías de ins
 | **Supabase** | [supabase/mcp](https://github.com/supabase/mcp) | Servidor oficial de Supabase por HTTP: esquemas de base de datos, consultas SQL y migraciones. | `https://mcp.supabase.com/mcp` |
 | **Engram** | [edg-l/engram-mcp](https://github.com/edg-l/engram-mcp) | Memoria persistente local (SQLite + ONNX) con recuperación híbrida (BM25 + vectores) y soporte de ramas git. | Binario `engram` |
 | **TestSprite** | [testsprite.com](https://www.testsprite.com/solutions/mcp) | Agente autónomo de pruebas: genera, ejecuta y corrige suites de test en frontend y backend. | `npx -y @testsprite/testsprite-mcp@latest` |
+| **Filesystem** | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Servidor oficial de sistema de archivos: lectura, escritura, edición y árboles de directorios con rutas delimitadas. | `npx -y @modelcontextprotocol/server-filesystem <carpetas>` |
+| **Log Analyzer** | [djm81/log_analyzer_mcp](https://github.com/djm81/log_analyzer_mcp) | Análisis de logs de tests, ejecución de pruebas dirigidas, reportes de cobertura y búsqueda avanzada. | `uvx log-analyzer-mcp` |
 
 ### Archivos de Configuración Listos para Usar:
 - **[`mcp/mcp-config.json`](./mcp/mcp-config.json)**: Configuración maestra con descripciones detalladas.

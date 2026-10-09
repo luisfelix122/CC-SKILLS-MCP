@@ -33,6 +33,24 @@
       "env": {
         "API_KEY": "YOUR_TESTSPRITE_API_KEY"
       }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:/Users/Luis/Projects"
+      ]
+    },
+    "log-analyzer": {
+      "command": "uvx",
+      "args": ["log-analyzer-mcp"],
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONIOENCODING": "utf-8",
+        "MCP_LOG_LEVEL": "INFO",
+        "LOG_DIRECTORIES": "[\"./logs\"]"
+      }
     }
   }
 }

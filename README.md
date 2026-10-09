@@ -60,6 +60,8 @@ All MCP configurations, schemas, and individual guides are located in the [`mcp/
 | **Supabase** | [supabase/mcp](https://github.com/supabase/mcp) | Official remote HTTP MCP: Postgres tables, SQL queries, migrations. | `https://mcp.supabase.com/mcp` |
 | **Engram** | [edg-l/engram-mcp](https://github.com/edg-l/engram-mcp) | Branch-aware persistent memory, hybrid BM25 + ONNX vector retrieval. | `engram` binary (SQLite local-first) |
 | **TestSprite** | [testsprite.com](https://www.testsprite.com/solutions/mcp) | Autonomous AI testing agent for test case generation, execution & repair. | `npx -y @testsprite/testsprite-mcp@latest` |
+| **Filesystem** | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Official scoped filesystem access: read, write, edit files and directory trees. | `npx -y @modelcontextprotocol/server-filesystem <dirs>` |
+| **Log Analyzer** | [djm81/log_analyzer_mcp](https://github.com/djm81/log_analyzer_mcp) | Test log parsing, error extraction, test run execution & coverage reports. | `uvx log-analyzer-mcp` |
 
 ### Pre-built MCP Config Files
 - **[`mcp/mcp-config.json`](./mcp/mcp-config.json)**: Consolidated master config with descriptions.
@@ -96,7 +98,9 @@ PRH/
 │   ├── github/                    # GitHub MCP server guide
 │   ├── supabase/                  # Supabase MCP guide
 │   ├── engram/                    # Engram memory MCP guide
-│   └── testsprite/                # TestSprite AI testing guide
+│   ├── testsprite/                # TestSprite AI testing guide
+│   ├── filesystem/                # Scoped filesystem MCP guide
+│   └── log-analyzer/              # Log Analyzer MCP guide
 └── scripts/
     ├── install-skills.sh          # Bash skill installation script
     ├── install-skills.ps1         # PowerShell skill installation script

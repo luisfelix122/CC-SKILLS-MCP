@@ -12,6 +12,8 @@ This folder contains configurations, documentation, and setup guides for the tea
 | **Supabase** | [supabase/mcp](https://github.com/supabase/mcp) | DB schemas, SQL execution, migrations, edge functions | `https://mcp.supabase.com/mcp` |
 | **Engram** | [edg-l/engram-mcp](https://github.com/edg-l/engram-mcp) | Branch-aware persistent memory, hybrid retrieval (BM25 + vector) | `engram` binary (SQLite + ONNX) |
 | **TestSprite** | [testsprite.com](https://www.testsprite.com/solutions/mcp) | Autonomous AI testing, test case generation, execution & repair | `npx -y @testsprite/testsprite-mcp@latest` |
+| **Filesystem** | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | Scoped local filesystem read/write/edit and directory tree traversal | `npx -y @modelcontextprotocol/server-filesystem <dirs>` |
+| **Log Analyzer** | [djm81/log_analyzer_mcp](https://github.com/djm81/log_analyzer_mcp) | Test log summarization, targeted test runs, coverage reports & log searching | `uvx log-analyzer-mcp` |
 
 ---
 
@@ -56,6 +58,8 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
 claude mcp add github --env GITHUB_PERSONAL_ACCESS_TOKEN=YOUR_TOKEN -- npx -y @modelcontextprotocol/server-github
 claude mcp add supabase --transport http https://mcp.supabase.com/mcp
 claude mcp add testsprite --env API_KEY=YOUR_KEY -- npx -y @testsprite/testsprite-mcp@latest
+claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem /path/to/project
+claude mcp add log-analyzer -- uvx log-analyzer-mcp
 ```
 
 ---
@@ -68,3 +72,5 @@ claude mcp add testsprite --env API_KEY=YOUR_KEY -- npx -y @testsprite/testsprit
 - [Supabase MCP Guide](./supabase/README.md)
 - [Engram MCP Guide](./engram/README.md)
 - [TestSprite MCP Guide](./testsprite/README.md)
+- [Filesystem MCP Guide](./filesystem/README.md)
+- [Log Analyzer MCP Guide](./log-analyzer/README.md)
