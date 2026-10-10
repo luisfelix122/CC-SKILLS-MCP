@@ -21,12 +21,15 @@ Es el criterio 2 del reto: optimizar con IA la imagen, la ficha y el precio. Red
 - [ ] Si no hay `descripcion_texto` pero sí `audio_ruta`, la función envía el audio en el formato validado en el PRP 000. Si ese formato no es compatible, responde `400 entrada_invalida` con el mensaje «Dicta o escribe la descripción».
 - [ ] El artesano puede editar todos los campos de la ficha y el precio antes de publicar. Si su acreditación no está `aprobada`, «Publicar» se ve deshabilitado con el motivo, y la base de datos también lo rechaza.
 - [ ] Si la IA falla, la pantalla ofrece «Reintentar» y «Completar a mano». Si no hay conexión, el reintento se hace solo al volver la red.
-- [ ] La clave de OpenRouter solo existe como secreto de la función. Una búsqueda de `OPENROUTER` en `src/` y `dist-*/` no encuentra nada.
+- [ ] Las claves (`IA_API_KEY`, `OPENROUTER_API_KEY`) solo existen como secretos de la función. Una búsqueda de `OPENROUTER` o `IA_API_KEY` en `src/` y `dist-*/` no encuentra nada.
+- [ ] El texto y el audio van al proxy LiteLLM (`${IA_BASE_URL}/v1/chat/completions`, alias `costearte-texto` o `costearte-audio`). Si el proxy no responde en `IA_TIMEOUT_MS` o devuelve 5xx, se reintenta **una vez** directo con OpenRouter. Si `IA_BASE_URL` no está definida, se usa OpenRouter directo. Hay pruebas para los tres caminos.
+- [ ] La mejora de la foto va directo a OpenRouter (`/api/v1/images`), según la decisión 0002.
 
 ## Contexto necesario
 - **Dominio:** Ficha, Foto original o mejorada, Descripción hablada; estados del Producto; reglas 1, 3 y 4.
 - **Contratos:** `docs/contratos.md` §Procesar producto con IA, §`producto` (`ia_error`, `ia_intentos`), §Archivos.
-- **Decisiones:** `0001-stack.md`, `docs/revision-alcance.md` §5 (fidelidad de la foto).
+- **Decisiones:** `0001-stack.md`, `0002-proxy-ia-litellm.md` (CC-02), `docs/revision-alcance.md` §5 (fidelidad de la foto).
+- **Depende de:** el PRP 009 para el camino por el proxy. Sin él, el PRP 003 funciona con OpenRouter directo y no se bloquea.
 - **Código existente a imitar:** `src/borradores/sincronizar.ts` (PRP 002): llamadas a Supabase y manejo de errores.
 - **Documentación externa:**
   - https://openrouter.ai/docs/features/multimodal/image-generation: `POST /api/v1/images`, `input_references`, `google/gemini-2.5-flash-image`, respuesta `data[].b64_json`.
@@ -46,7 +49,8 @@ Es el criterio 2 del reto: optimizar con IA la imagen, la ficha y el precio. Red
 | crear | `supabase/functions/procesar-producto/index.ts` | handler HTTP: autenticación, dueño, estados, llamadas y guardado |
 | crear | `supabase/functions/procesar-producto/ficha.ts` | prompt de la ficha, esquema y validación (sin APIs de Deno) |
 | crear | `supabase/functions/procesar-producto/ficha.test.ts` | Vitest: JSON válido, inválido, tipo fuera de la lista |
-| crear | `supabase/functions/procesar-producto/openrouter.ts` | cliente para texto, audio e imagen (con `fetch`) |
+| crear | `supabase/functions/_compartido/ia.ts` | cliente de IA: proxy con timeout y respaldo a OpenRouter para texto y audio; imagen directo a OpenRouter (con `fetch`). Lo reutiliza el PRP 008 |
+| crear | `supabase/functions/_compartido/ia.test.ts` | Vitest con `fetch` simulado: proxy correcto; proxy con timeout → respaldo; proxy con 5xx → respaldo; sin `IA_BASE_URL` |
 | crear | `src/publicacion/procesar.ts` | invocación y reintento al reconectar |
 | crear | `src/publicacion/RevisarProducto.tsx` | ficha editable, comparación de fotos, precio, disponibilidad y botón Publicar |
 | crear | `src/publicacion/CompararFotos.tsx` | original y mejorada lado a lado, con selector |
@@ -58,7 +62,7 @@ Cualquier archivo fuera de esta tabla requiere aprobación del responsable.
 
 ## Tareas (en orden)
 1. `ficha.ts` con sus pruebas, empezando por las pruebas.
-2. `openrouter.ts` e `index.ts`. Configurar el secreto con `supabase secrets set OPENROUTER_API_KEY=...` (lo hace Cristopher; el valor no va al repo) y desplegar.
+2. `_compartido/ia.ts` con sus pruebas, e `index.ts`. Cristopher configura los secretos con `supabase secrets set OPENROUTER_API_KEY=... IA_BASE_URL=... IA_API_KEY=... IA_TIMEOUT_MS=8000` (los valores no van al repo). Desplegar.
 3. La migración 0003.
 4. `procesar.ts`, `CompararFotos`, `RevisarProducto`, y `publicar.ts` con sus pruebas.
 5. Probar de punta a punta en el Android con un producto real.

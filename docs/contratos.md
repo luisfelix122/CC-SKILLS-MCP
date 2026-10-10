@@ -110,7 +110,7 @@ La foto se comprime en el cliente antes de subirla: lado mayor de 1600 px y cali
 - **Entrada:** `{ producto_id: uuid, mejorar_foto: boolean }`. El producto debe pertenecer al usuario y tener `descripcion_texto` o `audio_ruta`.
 - **Efecto:**
   1. Pasa el producto a `procesando`.
-  2. Llama a OpenRouter (Gemini) para generar la `ficha` a partir del texto, o del audio si no hay texto.
+  2. Genera la `ficha` con el cliente de IA (ver «Proxy de IA») a partir del texto, o del audio si no hay texto.
   3. Si `mejorar_foto` es verdadero, guarda `mejorada.png` en `fotos`.
   4. Deja el producto en `en_revision`.
   5. Si falla, lo devuelve a `borrador` con `ia_error`.
@@ -122,7 +122,7 @@ La foto se comprime en el cliente antes de subirla: lado mayor de 1600 px y cali
   - `409 estado_invalido`: el producto no está en `borrador` ni en `en_revision`.
   - `502 ia_no_disponible`: el producto queda en `borrador`.
   - `429 limite_ia`: se superó el límite de llamadas a la IA por producto **(supuesto: 3 por producto)**.
-- **Secretos:** `OPENROUTER_API_KEY`, solo en el entorno de la función.
+- **Secretos:** `OPENROUTER_API_KEY`, `IA_BASE_URL`, `IA_API_KEY` e `IA_TIMEOUT_MS`, solo en el entorno de la función.
 - **Usado por:** CU-03.
 
 ### Transiciones de orden
@@ -149,12 +149,23 @@ La foto se comprime en el cliente antes de subirla: lado mayor de 1600 px y cali
 - **Tipo:** Supabase Edge Function (HTTP POST con el JWT de una de las partes de la orden).
 - **Ruta:** `/functions/v1/traducir-mensaje`.
 - **Entrada:** `{ mensaje_id: uuid, idioma: string }`. `idioma` es un código BCP 47 tomado de `navigator.language`.
-- **Efecto:** si `texto_traducido[idioma]` ya existe, lo devuelve sin volver a llamar a la IA. Si no, traduce con OpenRouter y lo guarda.
+- **Efecto:** si `texto_traducido[idioma]` ya existe, lo devuelve sin volver a llamar a la IA. Si no, traduce con el cliente de IA y lo guarda.
 - **Salida (200):** `{ texto: string, idioma: string }`.
 - **Errores:**
   - `403 no_es_parte`
   - `502 ia_no_disponible`: el cliente muestra el original.
 - **Usado por:** CU-08.
+
+### Proxy de IA (LiteLLM)
+- **Tipo:** HTTP, compatible con OpenAI. Solo lo llaman las Edge Functions, nunca el cliente.
+- **Ruta:** `${IA_BASE_URL}/v1/chat/completions`, con la cabecera `Authorization: Bearer ${IA_API_KEY}`.
+- **Alias de modelo** (definidos en `infra/litellm/config.yaml`):
+  - `costearte-texto`: ficha y traducción.
+  - `costearte-audio`: audio como bloque `file` con data URI base64.
+- **Respaldo:** si el proxy excede `IA_TIMEOUT_MS` (por defecto 8000), devuelve 5xx o `IA_BASE_URL` no está definida, la misma petición va a OpenRouter (`https://openrouter.ai/api/v1/chat/completions`, `OPENROUTER_API_KEY`) con el modelo equivalente.
+- **Imagen:** la mejora de la foto va siempre directo a OpenRouter (`POST /api/v1/images`, `google/gemini-2.5-flash-image`).
+- **Usado por:** CU-03, CU-08.
+- **Responsable:** Cristopher.
 
 ### Sincronización del borrador local (APK → Supabase)
 - **Tipo:** módulo del cliente.
@@ -193,4 +204,4 @@ La foto se comprime en el cliente antes de subirla: lado mayor de 1600 px y cali
 - **Nombres:** `snake_case` en la base de datos y en JSON, tomados de `docs/dominio.md`. Sin sinónimos.
 - **Lugares (filtro, preliminar):** Máncora, Lobitos, Cabo Blanco, El Ñuro, Los Órganos, El Alto, Pariñas, Colán, Punta Sal. **Pendiente** confirmar con La Vaca Loca la lista definitiva y si Punta Sal tiene artesanos.
 - **Errores de la Edge Function:** `{ error: "<codigo>", mensaje: "<texto para mostrar>" }`.
-- **Variables de entorno** (solo nombres, en `.env.example`): `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` (cliente; es la "publishable key" que nombra la guía actual de Supabase) y `OPENROUTER_API_KEY` (solo en la Edge Function).
+- **Variables de entorno** (solo nombres, en `.env.example`): `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` (cliente; es la "publishable key" que nombra la guía actual de Supabase) y `OPENROUTER_API_KEY`, `IA_BASE_URL`, `IA_API_KEY`, `IA_TIMEOUT_MS` (solo en las Edge Functions). En el servidor del proxy (`infra/litellm/.env.example`): `LITELLM_MASTER_KEY` e `IA_KEY_1…n`.

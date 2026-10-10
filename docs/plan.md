@@ -8,7 +8,7 @@ Aprobado: <AAAA-MM-DD> (alcance revisado en `docs/revision-alcance.md`)
 - Sin conexión: IndexedDB (Dexie) dentro de la APK para los borradores
 - Voz: plugin `@capacitor-community/speech-recognition` (dictado con conexión)
 - Base de datos: Supabase (Postgres con RLS, Auth Google, Storage, Edge Functions)
-- IA: Gemini vía OpenRouter, invocado solo desde Edge Functions
+- IA: Gemini, llamado solo desde Edge Functions a través del proxy LiteLLM en el servidor del equipo (Cloudflare Tunnel), con OpenRouter directo como respaldo (ver `decisiones/0002-proxy-ia-litellm.md` y `cambios/CC-02.md`)
 - Despliegue: Vercel Hobby (HTTPS; uso no comercial, válido solo para la hackatón)
 - Verificación: ESLint, Prettier `--check`, `tsc --noEmit` y Vitest (se conectan a `make verify` en el PRP 000)
 
@@ -20,7 +20,7 @@ Aprobado: <AAAA-MM-DD> (alcance revisado en `docs/revision-alcance.md`)
   - Auth (Google).
   - Postgres (perfiles, productos, órdenes, mensajes de la orden).
   - Storage (fotos originales y mejoradas, audios).
-- **Edge Function `procesar-producto`:** recibe el texto dictado (o el audio, como respaldo), genera la ficha y propone la foto mejorada mediante OpenRouter. Guarda el resultado sin borrar la foto original.
+- **Edge Function `procesar-producto`:** recibe el texto dictado (o el audio, como respaldo), genera la ficha con el proxy LiteLLM (o, si el proxy falla, con OpenRouter directo) y propone la foto mejorada mediante OpenRouter. Guarda el resultado sin borrar la foto original.
 - **Pago:** fuera del sistema. El vendedor pega un enlace de pago (por ejemplo, un link individual de Izipay) y confirma el abono a mano.
 - **Despacho:** fuera del sistema. La orden guarda los datos estructurados que se entregan a la agencia (por ejemplo, Shalom).
 
@@ -32,7 +32,7 @@ Preliminar; el detalle va en `docs/contratos.md`.
 - **MensajeOrden:** orden, autor, texto original, texto traducido (opcional) — pertenece a una Orden.
 
 ## Casos de uso (en orden de construcción)
-Dueño de todos los CU: Cristopher (implementación). Imprescindibles: CU-00 a CU-07. Opcional: CU-08.
+Dueño de todos los CU: Cristopher (implementación). Imprescindibles: CU-00 a CU-07. Opcionales: CU-08 y CU-09 (el producto funciona con OpenRouter directo si el proxy no está listo).
 
 | # | Caso de uso | Actor | Depende de | Hito |
 | --- | --- | --- | --- | --- |
@@ -44,6 +44,7 @@ Dueño de todos los CU: Cristopher (implementación). Imprescindibles: CU-00 a C
 | CU-05 | Pedir un producto con recojo o envío y escribir en el hilo de la orden | comprador, artesano | CU-01, CU-04 | H2 |
 | CU-06 | Confirmar el pedido, reservar stock, enviar el enlace de pago, verificar el abono y marcar el envío | artesano, comprador | CU-05 | H3 |
 | CU-07 | Datos semilla ficticios y guion de demo | equipo | CU-04 a CU-06 | H3 |
+| CU-09 | Proxy de IA con LiteLLM en el servidor (infraestructura de CU-03 y CU-08) | equipo | CU-00 | H1 |
 | CU-08 | (Opcional) Traducir el hilo de la orden con "Ver original" | comprador, artesano | CU-05 | H3 |
 
 ## Hitos
@@ -55,6 +56,8 @@ Dueño de todos los CU: Cristopher (implementación). Imprescindibles: CU-00 a C
 Detalle completo en `docs/revision-alcance.md` §5.
 - La IA altera la foto del producto → la original queda por defecto y la mejorada solo se usa si el artesano la acepta.
 - Falla la red o se agota la cuota en la demo → video de respaldo y clave de OpenRouter con saldo.
+- Servidor del proxy apagado o sin internet → la Edge Function cae a OpenRouter directo tras `IA_TIMEOUT_MS`; probarlo apagando el contenedor.
+- Llaves de Gemini directo en el proxy → confirmar con los organizadores la restricción «Gemini con OpenRouter».
 - Login con Google en la APK (deep link con Capacitor, sin verificar) → probarlo en la hora 2 en un Android real.
 - La compilación de Android se traba (Android Studio/JDK, firma) → la APK se compila en la máquina de Cristopher, a cargo de Claude Code. Ahí hay Android Studio con su JDK 25, el SDK con la plataforma android-37 y build-tools 36. En la hora 1 se compila una APK de debug vacía y se instala en un celular. Si el Gradle que genera Capacitor no admite JDK 25, se instala el JDK que pida Capacitor.
 - Descripción hablada → con conexión se dicta en vivo con el reconocimiento de voz nativo y a OpenRouter va solo texto. Sin conexión se graba el audio; al volver la señal se dicta de nuevo o, si la prueba de formato de la hora 1 funciona, se envía el audio. Siempre se puede escribir a mano.
