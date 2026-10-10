@@ -1,0 +1,263 @@
+{
+  "version": "1.0",
+  "unidad": "Una fila por encuesta o visita, no por persona única",
+  "tablas": {
+    "Encuestas": {
+      "columnas": [
+        {
+          "nombre": "IdEncuesta",
+          "tipo": "int64",
+          "nullable": false
+        },
+        {
+          "nombre": "FechaEncuesta",
+          "tipo": "dateTime",
+          "nullable": false
+        },
+        {
+          "nombre": "IdZona",
+          "tipo": "string",
+          "nullable": false
+        },
+        {
+          "nombre": "ProvinciaOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "LocalidadOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "Sexo",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "Edad",
+          "tipo": "int64",
+          "nullable": true
+        },
+        {
+          "nombre": "RangoEdad",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "EstadoCivil",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "NivelEducativo",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "RecibioCapacitacion",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "TemaCapacitacionOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "TuvoIngresos",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "IngresoGeneralOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "Actividad",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "TrabajaActualmente",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "TipoOcupacion",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "RegistrosOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "TieneTrabajadores",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "Contrato",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "BeneficiosOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "IngresoTurismoOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "IngresoTurismo",
+          "tipo": "double",
+          "nullable": true
+        },
+        {
+          "nombre": "EstadoIngreso",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "RangoIngreso",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "AniosEstudioOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "ImpactoOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "ImpactoCapacitacion",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "OcupacionOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "DisponibilidadOriginal",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "MencionaRUC",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "MencionaRNA",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "SinRegistroDeclarado",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "Revision",
+          "tipo": "string",
+          "nullable": true
+        }
+      ]
+    },
+    "DimZona": {
+      "columnas": [
+        {
+          "nombre": "IdZona",
+          "tipo": "string",
+          "nullable": false
+        },
+        {
+          "nombre": "Provincia",
+          "tipo": "string",
+          "nullable": true
+        },
+        {
+          "nombre": "Localidad",
+          "tipo": "string",
+          "nullable": true
+        }
+      ]
+    },
+    "DimFecha": {
+      "columnas": [
+        {
+          "nombre": "Fecha",
+          "tipo": "dateTime",
+          "nullable": false
+        },
+        {
+          "nombre": "Anio",
+          "tipo": "int64",
+          "nullable": true
+        },
+        {
+          "nombre": "MesNumero",
+          "tipo": "int64",
+          "nullable": true
+        },
+        {
+          "nombre": "Mes",
+          "tipo": "string",
+          "nullable": true
+        }
+      ]
+    },
+    "RegistrosDeclarados": {
+      "columnas": [
+        {
+          "nombre": "IdEncuesta",
+          "tipo": "int64",
+          "nullable": false
+        },
+        {
+          "nombre": "Registro",
+          "tipo": "string",
+          "nullable": true
+        }
+      ]
+    }
+  },
+  "relaciones": [
+    {
+      "name": "Zona_Encuestas",
+      "fromTable": "Encuestas",
+      "fromColumn": "IdZona",
+      "toTable": "DimZona",
+      "toColumn": "IdZona",
+      "crossFilteringBehavior": "oneDirection"
+    },
+    {
+      "name": "Fecha_Encuestas",
+      "fromTable": "Encuestas",
+      "fromColumn": "FechaEncuesta",
+      "toTable": "DimFecha",
+      "toColumn": "Fecha",
+      "crossFilteringBehavior": "oneDirection"
+    },
+    {
+      "name": "Encuestas_Registros",
+      "fromTable": "RegistrosDeclarados",
+      "fromColumn": "IdEncuesta",
+      "toTable": "Encuestas",
+      "toColumn": "IdEncuesta",
+      "crossFilteringBehavior": "oneDirection"
+    }
+  ]
+}

@@ -1,0 +1,954 @@
+[
+  {
+    "IdEncuesta": 2,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 3,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 4,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 5,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 6,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 7,
+    "Registro": "RUS declarado"
+  },
+  {
+    "IdEncuesta": 8,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 9,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 10,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 11,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 12,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 13,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 14,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 15,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 16,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 17,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 17,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 17,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 18,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 19,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 20,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 21,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 22,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 23,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 24,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 25,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 25,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 26,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 27,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 28,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 29,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 29,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 30,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 31,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 31,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 32,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 33,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 34,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 34,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 34,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 34,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 35,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 36,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 37,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 37,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 37,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 38,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 39,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 40,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 40,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 41,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 42,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 42,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 43,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 44,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 45,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 46,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 47,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 47,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 48,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 48,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 48,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 49,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 50,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 51,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 52,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 53,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 54,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 55,
+    "Registro": "Autorización sectorial"
+  },
+  {
+    "IdEncuesta": 56,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 56,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 57,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 58,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 59,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 60,
+    "Registro": "Otro / revisar"
+  },
+  {
+    "IdEncuesta": 61,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 61,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 62,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 63,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 64,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 64,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 64,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 65,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 65,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 66,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 66,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 67,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 67,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 68,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 69,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 70,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 70,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 70,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 71,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 72,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 73,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 74,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 75,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 76,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 77,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 77,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 78,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 78,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 79,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 79,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 79,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 79,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 80,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 81,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 82,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 83,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 84,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 85,
+    "Registro": "Autorización sectorial"
+  },
+  {
+    "IdEncuesta": 86,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 87,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 88,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 89,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 90,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 91,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 92,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 92,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 93,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 94,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 95,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 95,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 96,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 97,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 97,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 98,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 99,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 99,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 100,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 101,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 102,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 103,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 104,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 105,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 106,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 107,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 107,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 108,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 109,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 110,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 111,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 112,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 113,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 114,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 115,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 116,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 116,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 116,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 117,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 117,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 118,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 119,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 120,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 121,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 122,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 123,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 124,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 125,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 125,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 125,
+    "Registro": "Autorización sectorial"
+  },
+  {
+    "IdEncuesta": 126,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 127,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 128,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 129,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 130,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 131,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 131,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 132,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 133,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 134,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 134,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 135,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 136,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 136,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 137,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 138,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 139,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 140,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 141,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 142,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 143,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 144,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 145,
+    "Registro": "Autorización sectorial"
+  },
+  {
+    "IdEncuesta": 146,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 146,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 146,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 146,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 147,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 148,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 149,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 150,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 151,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 152,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 153,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 154,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 155,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 156,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 157,
+    "Registro": "RUS declarado"
+  },
+  {
+    "IdEncuesta": 158,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 159,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 160,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 161,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 162,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 162,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 163,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 164,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 165,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 166,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 166,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 167,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 168,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 169,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 170,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 171,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 172,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 173,
+    "Registro": "T-Registro"
+  },
+  {
+    "IdEncuesta": 174,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 174,
+    "Registro": "Constitución de empresa"
+  },
+  {
+    "IdEncuesta": 175,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 176,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 177,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 178,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 179,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 180,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 181,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 182,
+    "Registro": "Licencia municipal"
+  },
+  {
+    "IdEncuesta": 182,
+    "Registro": "Autorización sectorial"
+  },
+  {
+    "IdEncuesta": 183,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 184,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 185,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 186,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 187,
+    "Registro": "Sin registro declarado"
+  },
+  {
+    "IdEncuesta": 188,
+    "Registro": "RUC"
+  },
+  {
+    "IdEncuesta": 188,
+    "Registro": "RNA"
+  },
+  {
+    "IdEncuesta": 189,
+    "Registro": "Sin registro declarado"
+  }
+]

@@ -1,0 +1,62 @@
+// Encuestas · formato: #,0
+'Encuestas'[Encuestas] = COALESCE(COUNTROWS(Encuestas), 0)
+
+// Mujeres · formato: #,0
+'Encuestas'[Mujeres] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[Sexo] = "Mujer"))
+
+// % mujeres · formato: 0.0%
+'Encuestas'[% mujeres] = DIVIDE([Mujeres], CALCULATE([Encuestas], KEEPFILTERS(Encuestas[Sexo] IN {"Mujer", "Varón"})))
+
+// Capacitados · formato: #,0
+'Encuestas'[Capacitados] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[RecibioCapacitacion] = "Sí"))
+
+// Sin capacitación · formato: #,0
+'Encuestas'[Sin capacitación] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[RecibioCapacitacion] = "No"))
+
+// % capacitados · formato: 0.0%
+'Encuestas'[% capacitados] = DIVIDE([Capacitados], CALCULATE([Encuestas], KEEPFILTERS(Encuestas[RecibioCapacitacion] IN {"Sí", "No"})))
+
+// Trabajan actualmente · formato: #,0
+'Encuestas'[Trabajan actualmente] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[TrabajaActualmente] = "Sí"))
+
+// % trabajan · formato: 0.0%
+'Encuestas'[% trabajan] = DIVIDE([Trabajan actualmente], CALCULATE([Encuestas], KEEPFILTERS(Encuestas[TrabajaActualmente] IN {"Sí", "No"})))
+
+// Sin registros declarados · formato: #,0
+'Encuestas'[Sin registros declarados] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[SinRegistroDeclarado] = "Sí"))
+
+// Mencionan RUC · formato: #,0
+'Encuestas'[Mencionan RUC] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[MencionaRUC] = "Sí"))
+
+// Mencionan RNA · formato: #,0
+'Encuestas'[Mencionan RNA] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[MencionaRNA] = "Sí"))
+
+// Encuestas por registro · formato: #,0
+'Encuestas'[Encuestas por registro] = DISTINCTCOUNT(RegistrosDeclarados[IdEncuesta])
+
+// Ingresos utilizables · formato: #,0
+'Encuestas'[Ingresos utilizables] = COUNT(Encuestas[IngresoTurismo])
+
+// % ingresos utilizables · formato: 0.0%
+'Encuestas'[% ingresos utilizables] = DIVIDE([Ingresos utilizables], [Encuestas])
+
+// Ingreso mediano · formato: "S/ "#,0
+'Encuestas'[Ingreso mediano] = MEDIAN(Encuestas[IngresoTurismo])
+
+// Ingreso promedio · formato: "S/ "#,0
+'Encuestas'[Ingreso promedio] = AVERAGE(Encuestas[IngresoTurismo])
+
+// Ingresos por revisar · formato: #,0
+'Encuestas'[Ingresos por revisar] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[EstadoIngreso] = "Revisar respuesta"))
+
+// Ingresos no informados · formato: #,0
+'Encuestas'[Ingresos no informados] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[EstadoIngreso] = "No informado"))
+
+// Ceros declarados · formato: #,0
+'Encuestas'[Ceros declarados] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[EstadoIngreso] = "Cero declarado"))
+
+// Con incidencias · formato: #,0
+'Encuestas'[Con incidencias] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[Revision] <> "Sin incidencia detectada"))
+
+// Sin impacto informado · formato: #,0
+'Encuestas'[Sin impacto informado] = CALCULATE([Encuestas], KEEPFILTERS(Encuestas[RecibioCapacitacion] = "Sí"), KEEPFILTERS(Encuestas[ImpactoCapacitacion] = "Sin respuesta"))
