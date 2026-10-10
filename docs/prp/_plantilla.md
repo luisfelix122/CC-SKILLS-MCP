@@ -35,9 +35,11 @@ Cualquier archivo fuera de esta tabla requiere aprobación del responsable.
 2. <...>
 
 ## Validación
-1. `make verify` (lint, formato, tipos, tests). Pendiente hasta definir stack.
-2. Pruebas a crear: <caso feliz, error, borde>
+1. `make verify` (ESLint, Prettier `--check`, `tsc --noEmit`, Vitest). Si hay SQL: `make test-db` (pgTAP con `supabase test db`; requiere Docker Desktop y `supabase start`). Si hay cambios en la APK: `make apk`.
+2. Pruebas a crear: <caso feliz, error, borde> — Vitest en `src/**/*.test.ts(x)` y `supabase/functions/**/*.test.ts`; pgTAP en `supabase/tests/*.test.sql`.
 3. Prueba manual: <pasos y resultado esperado>
+
+4. Pasar el PRP, `docs/contratos.md`, el diff y los resultados al subagente `reviewer`. Registrar el traspaso en `docs/traspasos/CU-XX-<responsable>.md`.
 
 ## Fuera de alcance
 - <...>
