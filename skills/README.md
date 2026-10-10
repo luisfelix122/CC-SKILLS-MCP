@@ -12,6 +12,7 @@ This directory contains pre-packaged, production-ready AI coding skills for the 
 | **webapp-testing** | [anthropics/skills](https://github.com/anthropics/skills/tree/main/skills/webapp-testing) | Anthropic official web application testing, Playwright, Vitest, Cypress best practices | Copy `skills/webapp-testing` |
 | **agent-browser** | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | Native browser automation CLI for AI agents (specially tuned for OpenCode) | `npx skills add vercel-labs/agent-browser` |
 | **skill-creator** | [anthropics/skills](https://github.com/anthropics/skills/tree/main/skills/skill-creator) | Anthropic official framework for authoring, evaluating, and packaging new agent skills | Copy `skills/skill-creator` |
+| **pitch-win** | [luisfelix122/CC-SKILLS-MCP](https://github.com/luisfelix122/CC-SKILLS-MCP/tree/main/skills/pitch-win) | Winning 3-minute hackathon pitch builder, stagecraft, Piura PDE stats, minimalist HTML canvas | `irm https://raw.githubusercontent.com/luisfelix122/CC-SKILLS-MCP/main/skills/pitch-win/install.ps1 \| iex` |
 
 ---
 

@@ -41,6 +41,7 @@ All skills are located in the [`skills/`](./skills/) directory with full offline
 | **webapp-testing** | [anthropics/skills](https://github.com/anthropics/skills) | Comprehensive web app testing patterns (Playwright, Vitest, integration workflows). | Pre-installed in `skills/webapp-testing` |
 | **agent-browser** | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | Native browser automation CLI for AI agents (special integration for **OpenCode**). | `npm i -g agent-browser && agent-browser install` |
 | **skill-creator** | [anthropics/skills](https://github.com/anthropics/skills) | Framework to create, benchmark, and package custom agent skills. | Pre-installed in `skills/skill-creator` |
+| **pitch-win** | [luisfelix122/CC-SKILLS-MCP](./skills/pitch-win) | Winning 3-minute hackathon pitch creator, stage delivery, Piura PDE stats, minimalist HTML canvas. | `irm https://raw.githubusercontent.com/luisfelix122/CC-SKILLS-MCP/main/skills/pitch-win/install.ps1 \| iex` |
 
 ### Using Skills with OpenCode
 OpenCode automatically discovers skills in `~/.config/opencode/skills/` (user level) or `.opencode/skills/` (repo level).  

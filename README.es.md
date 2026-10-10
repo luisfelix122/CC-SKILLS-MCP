@@ -43,6 +43,7 @@ Todas las skills están empaquetadas en la carpeta [`skills/`](./skills/) con su
 | **webapp-testing** | [anthropics/skills](https://github.com/anthropics/skills) | Patrones oficiales de testing para aplicaciones web (Playwright, Vitest, testing E2E). | Preinstalada en `skills/webapp-testing` |
 | **agent-browser** | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | Automatización del navegador web para agentes (especialmente adaptado para **OpenCode**). | `npm i -g agent-browser && agent-browser install` |
 | **skill-creator** | [anthropics/skills](https://github.com/anthropics/skills) | Guía y herramientas oficiales de Anthropic para crear y evaluar nuevas skills. | Preinstalada en `skills/skill-creator` |
+| **pitch-win** | [luisfelix122/CC-SKILLS-MCP](./skills/pitch-win) | Generador de pitches ganadores de 3 minutos para hackatones, expresión escénica, estadísticas del PDE Piura y canvas minimalista. | `irm https://raw.githubusercontent.com/luisfelix122/CC-SKILLS-MCP/main/skills/pitch-win/install.ps1 \| iex` |
 
 ### Uso específico con OpenCode
 Para usar **agent-browser** en OpenCode:
