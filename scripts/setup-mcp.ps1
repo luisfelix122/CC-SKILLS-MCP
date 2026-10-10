@@ -34,4 +34,4 @@ if ($runCtx7 -eq 'y' -or $runCtx7 -eq 'Y') {
 }
 
 Write-Host ""
-Write-Host "[✓] MCP setup review complete! Check $(Join-Path $McpSrc 'README.md') for details." -ForegroundColor Green
+Write-Host "[-] MCP setup review complete! Check $(Join-Path $McpSrc 'README.md') for details." -ForegroundColor Green

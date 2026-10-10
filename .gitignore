@@ -16,3 +16,26 @@ desktop.ini
 .env
 .env.local
 .env.*.local
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+secrets/
+credentials*.json
+service-account*.json
+
+# Claude Code (local, por persona)
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Stack: PENDIENTE. Al elegirlo, agregar sus artefactos locales
+# (dependencias, builds, caches, coverage, entornos virtuales).
