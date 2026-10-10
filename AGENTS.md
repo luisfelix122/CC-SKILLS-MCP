@@ -19,7 +19,7 @@ Equipo: Cristopher, Chero, Luis, Marvin, Johann.
 
 | Ruta / archivo | Responsable | Aprueba cambios |
 | --- | --- | --- |
-| `AGENTS.md`, `CLAUDE.md`, `Makefile`, `.claude/` | <por asignar> | <por asignar> |
+| `AGENTS.md`, `CLAUDE.md`, `Makefile`, `.claude/`, `.agents/`, `.gemini/`, `.opencode/` | <por asignar> | <por asignar> |
 | `docs/proyecto.md`, `docs/dominio.md` | <por asignar> | <por asignar> |
 | `docs/plan.md`, `docs/contratos.md` | <por asignar> | todo el equipo |
 | `docs/prp/NNN--*.md` | responsable indicado en cada PRP | revisor del PR |
@@ -42,7 +42,7 @@ modifican archivos fuera del PRP aunque parezca "una mejora rápida".
   no se declara "verde" algo que no se ejecutó.
 - Cada PRP incluye criterios de aceptación comprobables y sus pruebas.
 - No desactivar lint, tipos ni tests para "pasar". No dejar código muerto ni `TODO` sin dueño.
-- Toda PR pasa por revisión: una persona del equipo + subagente `reviewer` (`.claude/agents/reviewer.md`).
+- Toda PR pasa por revisión: una persona del equipo + revisor IA con el prompt de `.claude/agents/reviewer.md` (ver §6).
 
 ## 5. Seguridad
 
@@ -52,9 +52,31 @@ modifican archivos fuera del PRP aunque parezca "una mejora rápida".
 - Validar toda entrada externa; no confiar en datos del cliente.
 - Dependencias nuevas: justificar en el PR (motivo, licencia, mantenimiento).
 
-## 6. Commits
+## 6. Herramientas de IA
+
+Estas reglas valen igual para cualquier asistente (Claude Code, Codex, Gemini CLI,
+Antigravity, Cursor, OpenCode, Windsurf/Devin).
+
+| Herramienta | Instrucciones | Skill `prp-manager` | Revisor |
+| --- | --- | --- | --- |
+| Claude Code | `CLAUDE.md` → importa este archivo | `.claude/skills/` | subagente `reviewer` |
+| Codex, Antigravity, Cursor | `AGENTS.md` (nativo) | `.agents/skills/` | prompt de `.claude/agents/reviewer.md` |
+| Gemini CLI | `AGENTS.md` vía `.gemini/settings.json` | `.agents/skills/` | prompt de `.claude/agents/reviewer.md` |
+| OpenCode | `AGENTS.md` (nativo) | `.agents/skills/` o `.claude/skills/` | subagente `.opencode/agents/reviewer.md` |
+| Windsurf/Devin | `AGENTS.md` (nativo) | sin soporte documentado: leer `.agents/skills/prp-manager/SKILL.md` a mano | prompt de `.claude/agents/reviewer.md` |
+
+- La skill existe en dos copias idénticas: `.agents/skills/prp-manager` y `.claude/skills/prp-manager`.
+  Si cambias una, aplica el mismo cambio en la otra en el mismo commit.
+- El prompt del revisor tiene una sola fuente: `.claude/agents/reviewer.md`. Si tu herramienta
+  no tiene subagentes, abre una sesión nueva sin permisos de escritura y pásale ese archivo
+  junto con PRP, contratos, diff y salida de `make verify`.
+- No agregar archivos de reglas propios de una herramienta (`.cursor/rules`, `GEMINI.md`,
+  `.agents/rules/`, etc.) que dupliquen este archivo.
+
+## 7. Commits
 
 - Conventional Commits: `feat:`, `fix:`, `docs:`, `test:`, `refactor:`, `chore:`; ámbito opcional `feat(cu-03): ...`.
-- Sin atribución de IA: prohibido `Co-Authored-By` de asistentes o "Generated with ...".
+- Sin atribución de IA de ninguna herramienta: prohibido `Co-Authored-By` de asistentes,
+  "Generated with ..." o firmas equivalentes. Desactívalas en la configuración de tu herramienta.
 - Commits pequeños y coherentes; el mensaje explica el porqué.
 - Al entregar una versión: entrada en `CHANGELOG.md`.
