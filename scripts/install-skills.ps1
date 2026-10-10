@@ -1,6 +1,10 @@
 # PowerShell script to install skills for Windows users
 $ErrorActionPreference = "Stop"
 
+# Configurar la consola para manejar correctamente la codificación UTF-8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host "  Installing Skills for Coding Agents    " -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
@@ -20,10 +24,14 @@ foreach ($Target in $TargetDirs) {
         New-Item -ItemType Directory -Path $Target -Force | Out-Null
     }
 
-    Get-ChildItem -Directory $SkillsSrc | ForEach-Object {
-        $dest = Join-Path $Target $_.Name
-        Write-Host "    -> Copying $($_.Name) to $Target" -ForegroundColor Gray
-        Copy-Item -Recurse -Force $_.FullName $dest
+    if (Test-Path $SkillsSrc) {
+        Get-ChildItem -Directory $SkillsSrc | ForEach-Object {
+            $dest = Join-Path $Target $_.Name
+            Write-Host "    -> Copying $($_.Name) to $Target" -ForegroundColor Gray
+            Copy-Item -Recurse -Force $_.FullName $dest
+        }
+    } else {
+        Write-Host "[-] Warning: Source folder '$SkillsSrc' not found." -ForegroundColor Yellow
     }
 }
 
@@ -36,4 +44,4 @@ if (-not (Get-Command "agent-browser" -ErrorAction SilentlyContinue)) {
 }
 
 Write-Host ""
-Write-Host "[✓] All skills installed successfully!" -ForegroundColor Green
+Write-Host "[OK] All skills installed successfully!" -ForegroundColor Green
